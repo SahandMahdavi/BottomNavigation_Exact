@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_one"
+        android:title="پروفایل"
+        android:icon="@drawable/ic_person2"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/navigation_two"
+        android:title="جستجو"
+        android:icon="@drawable/ic_search2"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/navigation_three"
+        android:title="اطلاعات"
+        android:icon="@drawable/ic_list2"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/navigation_four"
+        android:title="درباره"
+        android:checked="true"
+        android:icon="@drawable/ic_home2"
+        app:showAsAction="ifRoom">
+    </item>
+
+</menu>

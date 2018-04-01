@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scrolltwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/profile"
+            android:fillViewport="true"
+            android:layoutDirection="rtl"
+            android:scrollbars="none"
+            tools:context="com.example.asus.amindatacolector.Fragments.TwoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_search_profile_fragment_two"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_select"
+            android:gravity="center"
+            android:hint="@string/user_search"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"/>
+
+        <ImageView
+            android:id="@+id/ic_search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="-15dp"
+            android:layout_marginTop="13dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_search2"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

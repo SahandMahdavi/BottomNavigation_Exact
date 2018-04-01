@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">AminDataCollector</string>
+
+    <string-array name="strings">
+        <item>Open GoogleMaps</item>
+        <item>Open Location</item>
+    </string-array>
+
+    <string name="about_app_home">شما میتوانید برای درج اطلاعات مراجعه کنندگان خود از قسمت اطلاعات، مشخصات افراد شا وارد کرده و از قسمت جستجو برای جستجوی شخص و یا سرکت استفاده کنید.</string>
+
+    <string name="interact">نحوه تعامل با مخاطب :</string>
+    <string name="organ_profile"> مشخصات سازمان :</string>
+    <string name="profile">مشخصات فردی :</string>
+    <string name="contacts">اطلاعات تماس :</string>
+    <string name="result">نتیجه :</string>
+    <string name="visitor_amin_budget">بازدید کننده از غرفه تامین سرمایه امین</string>
+    <string name="visitor_customer">مراجعه به غرفه مخاطبان</string>
+    <string name="company_name">نام سازمان</string>
+    <string name="company_research">زمینه فعالیت سازمان</string>
+    <string name="gender">جنسیت</string>
+    <string name="experties">زمینه تخصص</string>
+    <string name="fullname">نام و نام خانوادگی</string>
+    <string name="organ_level">سمت سازمانی</string>
+    <string name="phone">همراه</string>
+    <string name="direct">مستقیم</string>
+    <string name="fax">فکس</string>
+    <string name="email">ایمیل</string>
+    <string name="postal_address">آدرس پستی</string>
+    <string name="agreed_services">سرویس های توافق شده</string>
+    <string name="need_next_visit">نیاز به مذاکره آتی</string>
+    <string name="relational_name">نام رابط</string>
+    <string name="relational_phone">شماره تماس رابط</string>
+    <string name="description">توضیحات</string>
+    <string name="save_changes">ثبت اطلاعات</string>
+    <string name="picture">عکس :</string>
+    <string name="save_image">ذخیره عکس</string>
+    <string name="todo">TODO</string>
+    <string name="user_search">جستجوی کاربر</string>
+    <string name="user_info">برای مشاهده ی اطلاعات کامل مراجعه کنندگان  ,نام و زمینه فعالیت سازمان آن ها را در فیلد های زیر ثبت کرده و دکمه ثبت را بفشارید!</string>
+    <string name="sign_in">ورود</string>
+    <string name="or">یا</string>
+    <string name="register_intent">ثبت نام</string>
+    <string name="textview">TextView</string>
+</resources>
