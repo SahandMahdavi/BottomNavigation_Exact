@@ -119,28 +119,28 @@ public class CustomAdapter extends BaseAdapter
 
         if (data.size() == 0)
         {
-            holder.visitorFromBudget.setTag("No Data");
-            holder.visitorCustomer.setTag("No Data");
-            holder.companyName.setTag("No Data");
-            holder.companyResearch.setTag("No Data");
-            holder.gender.setTag("No Data");
-            holder.nameAndFamilyNAme.setTag("No Data");
-            holder.fieldOfExpertise.setTag("No Data");
-            holder.organizationLevel.setTag("No Data");
-            holder.cellPhone.setTag("No Data");
-            holder.directPhone.setTag("No Data");
-            holder.fax.setTag("No Data");
-            holder.postAddres.setTag("No Data");
-            holder.agreedServices.setTag("No Data");
-            holder.needToNextVisit.setTag("No Data");
-            holder.relationalName.setTag("No Data");
-            holder.relationalPhone.setTag("No Data");
-            holder.description.setTag("No Data");
+            holder.visitorFromBudget.setText("No Data");
+            holder.visitorCustomer.setText("No Data");
+            holder.companyName.setText("No Data");
+            holder.companyResearch.setText("No Data");
+            holder.gender.setText("No Data");
+            holder.nameAndFamilyNAme.setText("No Data");
+            holder.fieldOfExpertise.setText("No Data");
+            holder.organizationLevel.setText("No Data");
+            holder.cellPhone.setText("No Data");
+            holder.directPhone.setText("No Data");
+            holder.fax.setText("No Data");
+            holder.postAddres.setText("No Data");
+            holder.agreedServices.setText("No Data");
+            holder.needToNextVisit.setText("No Data");
+            holder.relationalName.setText("No Data");
+            holder.relationalPhone.setText("No Data");
+            holder.description.setText("No Data");
 //            holder.image.setImageBitmap(null);
         } else
         {
-            holder.visitorFromBudget.setTag(data.get(position).getVisitorFromBudget());
-            holder.visitorCustomer.setTag(data.get(position).getVisitorCustomer());
+            holder.visitorFromBudget.setText(data.get(position).getVisitorFromBudget());
+            holder.visitorCustomer.setText(data.get(position).getVisitorCustomer());
             holder.companyName.setText(data.get(position).getCompanyName());
             holder.companyResearch.setText(data.get(position).getCompanyResearch());
             holder.gender.setText(data.get(position).getGender());
@@ -153,7 +153,7 @@ public class CustomAdapter extends BaseAdapter
             holder.email.setText(data.get(position).getEmail());
             holder.postAddres.setText(data.get(position).getPostAddres());
             holder.agreedServices.setText(data.get(position).getAgreedServices());
-            holder.needToNextVisit.setTag(data.get(position).getNeedToNextVisit());
+            holder.needToNextVisit.setText(data.get(position).getNeedToNextVisit());
             holder.relationalName.setText(data.get(position).getRelationalName());
             holder.relationalPhone.setText(data.get(position).getRelationalPhone());
             holder.description.setText(data.get(position).getDescription());
@@ -164,8 +164,8 @@ public class CustomAdapter extends BaseAdapter
 
         class likeRequest extends AsyncTask<Void, Void, String>
         {
-            private final Boolean visitorFromBudget;
-            private final Boolean visitorCustomer;
+            private final String visitorFromBudget;
+            private final String visitorCustomer;
             private final String gender;
             private final String nameAndFamilyName;
             private final String fieldOfExpertise;
@@ -175,7 +175,7 @@ public class CustomAdapter extends BaseAdapter
             private final String fax;
             private final String email;
             private final String agreedServices;
-            private final Boolean needToNextVisit;
+            private final String needToNextVisit;
             private final String relationalName;
             private final String relationalPhone;
             private final String description;
@@ -185,7 +185,7 @@ public class CustomAdapter extends BaseAdapter
 
             ViewHolder viewHolder;
 
-            public likeRequest(Boolean visitorFromBudget, Boolean visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, Boolean needToNextVisit, String relationalName, String relationalPhone, String description, ViewHolder viewHolder)
+            public likeRequest(String visitorFromBudget, String visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, String needToNextVisit, String relationalName, String relationalPhone, String description, ViewHolder viewHolder)
             {
                 this.visitorFromBudget = visitorFromBudget;
                 this.visitorCustomer = visitorCustomer;
@@ -217,7 +217,7 @@ public class CustomAdapter extends BaseAdapter
             @Override
             protected String doInBackground(Void... voids)
             {
-                String Address = "https://aminib.site/adcapi/all_message.php";
+                String Address = "https://aminib.site/adcapi/register.php";
                 HashMap hashMap = new HashMap();
 
                 hashMap.put("visitorFromBudget", visitorFromBudget);

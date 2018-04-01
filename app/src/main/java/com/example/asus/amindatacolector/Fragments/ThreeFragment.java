@@ -36,7 +36,7 @@ public class ThreeFragment extends Fragment
 {
     View view;
 
-    CheckBox check_interact1, check_interact2, check_result2;
+    EditText check_interact1, check_interact2, check_result2;
 
     EditText edt_organ1, edt_organ2 ,edt_personal_profile1, edt_personal_profile2, edt_personal_profile3,
              edt_personal_profile4, edt_contacts1, edt_contacts2,edt_contacts3, edt_contacts4, edt_contacts5,
@@ -69,8 +69,8 @@ public class ThreeFragment extends Fragment
     private class registerRequest extends AsyncTask<Void,Void,String>
     {
 
-        private final Boolean visitorFromBudget;
-        private final Boolean visitorCustomer;
+        private final String visitorFromBudget;
+        private final String visitorCustomer;
         private final String gender;
         private final String nameAndFamilyName;
         private final String fieldOfExpertise;
@@ -80,7 +80,7 @@ public class ThreeFragment extends Fragment
         private final String fax;
         private final String email;
         private final String agreedServices;
-        private final Boolean needToNextVisit;
+        private final String needToNextVisit;
         private final String relationalName;
         private final String relationalPhone;
         private final String description;
@@ -90,7 +90,7 @@ public class ThreeFragment extends Fragment
 
         Context context;
 
-        public registerRequest(Boolean visitorFromBudget, Boolean visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, Boolean needToNextVisit, String relationalName, String relationalPhone, String description, Context context)
+        public registerRequest(String visitorFromBudget, String visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, String needToNextVisit, String relationalName, String relationalPhone, String description, Context context)
         {
             this.visitorFromBudget = visitorFromBudget;
             this.visitorCustomer = visitorCustomer;
@@ -159,9 +159,9 @@ public class ThreeFragment extends Fragment
 
     public void initDeclare()
     {
-        check_interact1 = (CheckBox)view.findViewById(R.id.check_interact1);
-        check_interact2 = (CheckBox)view.findViewById(R.id.check_interact2);
-        check_result2   = (CheckBox)view.findViewById(R.id.check_result2);
+        check_interact1 = (EditText)view.findViewById(R.id.check_interact1);
+        check_interact2 = (EditText)view.findViewById(R.id.check_interact2);
+        check_result2   = (EditText)view.findViewById(R.id.check_result2);
 
         edt_organ1      = (EditText)view.findViewById(R.id.edt_organ1);
         edt_organ2      = (EditText)view.findViewById(R.id.edt_organ2);
@@ -197,9 +197,9 @@ public class ThreeFragment extends Fragment
 //
 //                getActivity().finish();
 
-                Boolean check1 = check_interact1.isChecked();
-                Boolean check2 = check_interact2.isChecked();
-                Boolean check3 = check_result2.isChecked();
+                String check1 = check_interact1.getText().toString();
+                String check2 = check_interact2.getText().toString();
+                String check3 = check_result2.getText().toString();
                 String organ1 = edt_organ1.getText().toString();
                 String organ2 = edt_organ2.getText().toString();
                 String personal_profile1 = edt_personal_profile1.getText().toString();

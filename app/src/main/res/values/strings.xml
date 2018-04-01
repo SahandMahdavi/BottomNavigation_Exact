@@ -1,11 +1,6 @@
 <resources>
     <string name="app_name">AminDataCollector</string>
 
-    <string-array name="strings">
-        <item>Open GoogleMaps</item>
-        <item>Open Location</item>
-    </string-array>
-
     <string name="about_app_home">شما میتوانید برای درج اطلاعات مراجعه کنندگان خود از قسمت اطلاعات، مشخصات افراد شا وارد کرده و از قسمت جستجو برای جستجوی شخص و یا سرکت استفاده کنید.</string>
 
     <string name="interact">نحوه تعامل با مخاطب :</string>
@@ -13,7 +8,7 @@
     <string name="profile">مشخصات فردی :</string>
     <string name="contacts">اطلاعات تماس :</string>
     <string name="result">نتیجه :</string>
-    <string name="visitor_amin_budget">بازدید کننده از غرفه تامین سرمایه امین</string>
+    <string name="visitor_amin_budget">بازدید کننده از غرفه تامین سرمایه امین :</string>
     <string name="visitor_customer">مراجعه به غرفه مخاطبان</string>
     <string name="company_name">نام سازمان</string>
     <string name="company_research">زمینه فعالیت سازمان</string>
@@ -27,7 +22,7 @@
     <string name="email">ایمیل</string>
     <string name="postal_address">آدرس پستی</string>
     <string name="agreed_services">سرویس های توافق شده</string>
-    <string name="need_next_visit">نیاز به مذاکره آتی</string>
+    <string name="need_next_visit">آیا نیاز به مذاکره آتی میباشد؟ بله...خیر</string>
     <string name="relational_name">نام رابط</string>
     <string name="relational_phone">شماره تماس رابط</string>
     <string name="description">توضیحات</string>

@@ -96,7 +96,7 @@ public class OneFragment extends Fragment
             {
                 Intent i = new Intent(getActivity(), Main2Activity.class);
                 i.putExtra("companyName", companyName);
-//                i.putExtra("companyResearch",companyResearch);
+                i.putExtra("companyResearch",companyResearch);
                 startActivity(i);
 //                startActivity(new Intent(getActivity(), Main2Activity.class));
             }

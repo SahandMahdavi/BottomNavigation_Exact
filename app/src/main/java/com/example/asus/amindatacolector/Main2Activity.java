@@ -56,7 +56,7 @@ public class Main2Activity extends AppCompatActivity
 
             Intent intent = getIntent();
             Username = intent.getStringExtra("companyName");
-//            UserCompany = intent.getStringExtra("companyResearch");
+            UserCompany = intent.getStringExtra("companyResearch");
             Toast.makeText(getApplicationContext(), Username, Toast.LENGTH_LONG).show();
 
             lstPosts = (ListView) findViewById(R.id.lstPosts);
@@ -109,8 +109,8 @@ public class Main2Activity extends AppCompatActivity
                     {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                        Boolean visitorFromBudget = jsonObject.getBoolean("visitorFromBudget");
-                        Boolean visitorCustomer = jsonObject.getBoolean("visitorCustomer");
+                        String visitorFromBudget = jsonObject.getString("visitorFromBudget");
+                        String visitorCustomer = jsonObject.getString("visitorCustomer");
                         String companyName = jsonObject.getString("companyName");
                         String companyResearch = jsonObject.getString("companyResearch");
                         String gender = jsonObject.getString("gender");
@@ -123,7 +123,7 @@ public class Main2Activity extends AppCompatActivity
                         String email = jsonObject.getString("email");
                         String postAddres = jsonObject.getString("postAddres");
                         String agreedServices = jsonObject.getString("agreedServices");
-                        Boolean needToNextVisit = jsonObject.getBoolean("needToNextVisit");
+                        String needToNextVisit = jsonObject.getString("needToNextVisit");
                         String relationalName = jsonObject.getString("relationalName");
                         String relationalPhone = jsonObject.getString("relationalPhone");
                         String description = jsonObject.getString("description");
@@ -136,7 +136,7 @@ public class Main2Activity extends AppCompatActivity
                     }
                     ((BaseAdapter)lstPosts.getAdapter()).notifyDataSetChanged();
                 }
-                catch (JSONException e)
+                catch (Exception e)
                 {
                     e.fillInStackTrace();
                 }

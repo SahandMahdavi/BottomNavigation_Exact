@@ -5,8 +5,8 @@ import android.widget.ImageView;
 
 public class Data
 {
-    Boolean visitorFromBudget;
-    Boolean visitorCustomer;
+    String visitorFromBudget;
+    String visitorCustomer;
     String companyName;
     String companyResearch;
     String gender;
@@ -19,13 +19,13 @@ public class Data
     String email;
     String postAddres;
     String agreedServices;
-    Boolean needToNextVisit;
+    String needToNextVisit;
     String relationalName;
     String relationalPhone;
     String description;
 //    ImageView image;
 
-    public Data(Boolean visitorFromBudget, Boolean visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, Boolean needToNextVisit, String relationalName, String relationalPhone, String description)
+    public Data(String visitorFromBudget, String visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, String needToNextVisit, String relationalName, String relationalPhone, String description)
     {
         this.visitorFromBudget = visitorFromBudget;
         this.visitorCustomer = visitorCustomer;
@@ -77,22 +77,22 @@ public class Data
         this.companyResearch = companyResearch;
     }
 
-    public Boolean getVisitorFromBudget()
+    public String getVisitorFromBudget()
     {
         return visitorFromBudget;
     }
 
-    public void setVisitorFromBudget(Boolean visitorFromBudget)
+    public void setVisitorFromBudget(String visitorFromBudget)
     {
         this.visitorFromBudget = visitorFromBudget;
     }
 
-    public Boolean getVisitorCustomer()
+    public String getVisitorCustomer()
     {
         return visitorCustomer;
     }
 
-    public void setVisitorCustomer(Boolean visitorCustomer)
+    public void setVisitorCustomer(String visitorCustomer)
     {
         this.visitorCustomer = visitorCustomer;
     }
@@ -187,12 +187,12 @@ public class Data
         this.agreedServices = agreedServices;
     }
 
-    public Boolean getNeedToNextVisit()
+    public String getNeedToNextVisit()
     {
         return needToNextVisit;
     }
 
-    public void setNeedToNextVisit(Boolean needToNextVisit)
+    public void setNeedToNextVisit(String needToNextVisit)
     {
         this.needToNextVisit = needToNextVisit;
     }

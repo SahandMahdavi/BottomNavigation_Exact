@@ -40,26 +40,53 @@
                 android:layout_marginStart="20dp"
                 android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/check_interact1"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:focusable="true"
+                    android:layout_margin="10dp"
                     android:text="@string/visitor_amin_budget"
                     android:textColor="@color/textView_visit"
+                    android:textSize="15sp"
                     android:typeface="sans"/>
 
-                <CheckBox
-                    android:id="@+id/check_interact2"
+                <EditText
+                    android:id="@+id/check_interact1"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_select"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:hint="بله...خیر"
+                    android:inputType="text"
+                    android:shadowColor="#fff"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="10sp"
-                    android:focusable="true"
+                    android:layout_margin="10dp"
                     android:text="@string/visitor_customer"
                     android:textColor="@color/textView_visit"
+                    android:textSize="15sp"
                     android:typeface="sans"/>
+
+                <EditText
+                    android:id="@+id/check_interact2"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_select"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:hint="بله...خیر"
+                    android:inputType="text"
+                    android:shadowColor="#fff"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16sp"
+                    />
             </LinearLayout>
         </LinearLayout>
 
@@ -336,17 +363,28 @@
                     android:textColorHint="#fff"
                     android:textSize="16sp"/>
 
-                <CheckBox
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="@string/need_next_visit"
+                    android:textColor="@color/textView_visit"
+                    android:textSize="18sp"
+                    android:typeface="sans"/>
+
+                <EditText
                     android:id="@+id/check_result2"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="20dp"
-                    android:focusable="true"
+                    android:background="@drawable/btn_select"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="@string/need_next_visit"
-                    android:textColor="@color/textView_visit"
-                    android:typeface="sans"/>
+                    android:hint="بله...خیر؟"
+                    android:inputType="text"
+                    android:shadowColor="#fff"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16sp"/>
 
                 <EditText
                     android:id="@+id/edt_result3"
