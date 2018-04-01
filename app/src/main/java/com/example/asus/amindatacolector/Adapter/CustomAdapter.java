@@ -121,21 +121,21 @@ public class CustomAdapter extends BaseAdapter
         {
             holder.visitorFromBudget.setTag("No Data");
             holder.visitorCustomer.setTag("No Data");
-            holder.companyName.setText("No Data");
-            holder.companyResearch.setText("No Data");
-            holder.gender.setText("No Data");
-            holder.nameAndFamilyNAme.setText("No Data");
-            holder.fieldOfExpertise.setText("No Data");
-            holder.organizationLevel.setText("No Data");
-            holder.cellPhone.setText("No Data");
-            holder.directPhone.setText("No Data");
-            holder.fax.setText("No Data");
-            holder.postAddres.setText("No Data");
-            holder.agreedServices.setText("No Data");
+            holder.companyName.setTag("No Data");
+            holder.companyResearch.setTag("No Data");
+            holder.gender.setTag("No Data");
+            holder.nameAndFamilyNAme.setTag("No Data");
+            holder.fieldOfExpertise.setTag("No Data");
+            holder.organizationLevel.setTag("No Data");
+            holder.cellPhone.setTag("No Data");
+            holder.directPhone.setTag("No Data");
+            holder.fax.setTag("No Data");
+            holder.postAddres.setTag("No Data");
+            holder.agreedServices.setTag("No Data");
             holder.needToNextVisit.setTag("No Data");
-            holder.relationalName.setText("No Data");
-            holder.relationalPhone.setText("No Data");
-            holder.description.setText("No Data");
+            holder.relationalName.setTag("No Data");
+            holder.relationalPhone.setTag("No Data");
+            holder.description.setTag("No Data");
 //            holder.image.setImageBitmap(null);
         } else
         {
