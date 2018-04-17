@@ -1,6 +1,7 @@
 package com.example.asus.amindatacolector.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +11,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.example.asus.amindatacolector.Model.Data;
 import com.example.asus.amindatacolector.R;
 import com.example.asus.amindatacolector.Utils.Utils;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
 
 
 public class CustomAdapter extends BaseAdapter
@@ -24,12 +37,14 @@ public class CustomAdapter extends BaseAdapter
     public ArrayList<Data> data = new ArrayList<>();
     private LayoutInflater inflater = null;
     private String username;
-
-    public CustomAdapter(Context context, ArrayList<Data> data)
-    {
-        this.context = context;
-        this.data = data;
-    }
+    public ImageView imageVisitor;
+    String codedImage = "";
+//    private String url = "https://aminib.site/adcapi/personal_card.php";
+//    public CustomAdapter(Context context, ArrayList<Data> data)
+//    {
+//        this.context = context;
+//        this.data = data;
+//    }
 
     public CustomAdapter(Context ctx, ArrayList<Data> data, String companyName)
     {
@@ -76,8 +91,7 @@ public class CustomAdapter extends BaseAdapter
         public TextView relationalName;
         public TextView relationalPhone;
         public TextView description;
-//        public ImageView image;
-
+        public ImageView image;
     }
 
     public View getView(final int position, View convertView, ViewGroup parent)
@@ -109,7 +123,9 @@ public class CustomAdapter extends BaseAdapter
             holder.relationalName = (TextView) vi.findViewById(R.id.relationalName);
             holder.relationalPhone = (TextView) vi.findViewById(R.id.relationalPhone);
             holder.description = (TextView) vi.findViewById(R.id.description);
-//            holder.image = (ImageView) vi.findViewById(R.id.image);
+            holder.image = (ImageView) vi.findViewById(R.id.image);
+
+
 
             vi.setTag(holder);
         } else
@@ -136,9 +152,10 @@ public class CustomAdapter extends BaseAdapter
             holder.relationalName.setText("No Data");
             holder.relationalPhone.setText("No Data");
             holder.description.setText("No Data");
-//            holder.image.setImageBitmap(null);
+            holder.image.setImageBitmap(null);
         } else
         {
+
             holder.visitorFromBudget.setText(data.get(position).getVisitorFromBudget());
             holder.visitorCustomer.setText(data.get(position).getVisitorCustomer());
             holder.companyName.setText(data.get(position).getCompanyName());
@@ -157,115 +174,165 @@ public class CustomAdapter extends BaseAdapter
             holder.relationalName.setText(data.get(position).getRelationalName());
             holder.relationalPhone.setText(data.get(position).getRelationalPhone());
             holder.description.setText(data.get(position).getDescription());
-//            holder.image.setImageResource(data.get(position).getImage());
 
-            return vi;
+//            Picasso.with(context)
+//                    .load("https://aminib.site/adcapi/personal_card.php")
+//                    .into(imageVisitor);
+
         }
-
-        class likeRequest extends AsyncTask<Void, Void, String>
-        {
-            private final String visitorFromBudget;
-            private final String visitorCustomer;
-            private final String gender;
-            private final String nameAndFamilyName;
-            private final String fieldOfExpertise;
-            private final String organizationLevel;
-            private final String cellPhone;
-            private final String directPhone;
-            private final String fax;
-            private final String email;
-            private final String agreedServices;
-            private final String needToNextVisit;
-            private final String relationalName;
-            private final String relationalPhone;
-            private final String description;
-            private final String companyName;
-            private final String companyResearch;
-            private final String postAddres;
-
-            ViewHolder viewHolder;
-
-            public likeRequest(String visitorFromBudget, String visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, String needToNextVisit, String relationalName, String relationalPhone, String description, ViewHolder viewHolder)
-            {
-                this.visitorFromBudget = visitorFromBudget;
-                this.visitorCustomer = visitorCustomer;
-                this.companyName = companyName;
-                this.companyResearch = companyResearch;
-                this.gender = gender;
-                this.nameAndFamilyName = nameAndFamilyName;
-                this.fieldOfExpertise = fieldOfExpertise;
-                this.organizationLevel = organizationLevel;
-                this.cellPhone = cellPhone;
-                this.directPhone = directPhone;
-                this.fax = fax;
-                this.email = email;
-                this.postAddres = postAddres;
-                this.agreedServices = agreedServices;
-                this.needToNextVisit = needToNextVisit;
-                this.relationalName = relationalName;
-                this.relationalPhone = relationalPhone;
-                this.description = description;
-                this.viewHolder = viewHolder;
-            }
-
-            @Override
-            protected void onPreExecute()
-            {
-                super.onPreExecute();
-            }
-
-            @Override
-            protected String doInBackground(Void... voids)
-            {
-                String Address = "https://aminib.site/adcapi/register.php";
-                HashMap hashMap = new HashMap();
-
-                hashMap.put("visitorFromBudget", visitorFromBudget);
-                hashMap.put("visitorCustomer", visitorCustomer);
-                hashMap.put("companyName", companyName);
-                hashMap.put("companyResearch", companyResearch);
-                hashMap.put("gender", gender);
-                hashMap.put("nameAndFamilyName", nameAndFamilyName);
-                hashMap.put("fieldOfExpertise", fieldOfExpertise);
-                hashMap.put("organizationLevel", organizationLevel);
-                hashMap.put("cellPhone", cellPhone);
-                hashMap.put("directPhone", directPhone);
-                hashMap.put("fax", fax);
-                hashMap.put("email", email);
-                hashMap.put("postAddres", postAddres);
-                hashMap.put("agreedServices", agreedServices);
-                hashMap.put("needToNextVisit", needToNextVisit);
-                hashMap.put("relationalName", relationalName);
-                hashMap.put("relationalPhone", relationalPhone);
-                hashMap.put("description", description);
-
-//                hashMap.put("viewHolder", viewHolder);
-
-                return Utils.sendData(Address, hashMap);
-            }
-
-            @Override
-            protected void onPostExecute(String s)
-            {
-                Toast.makeText(context,s,Toast.LENGTH_LONG).show();
-            }
-        }
-
         return vi;
     }
 }
 
-//        @Override
-//        protected void onPostExecute(String likersUsernameData)
+//        class likeRequest extends AsyncTask<Void, Void, String>
 //        {
-//            //Toast.makeText(context,s,Toast.LENGTH_LONG).show();
-//            data.get(position).setLikersUsername(likersUsernameData, username);
-//            viewHolder.txtNumberOfLikers.setText(data.get(position).getNumberOfLikers() + "");
+//            private final String visitorFromBudget;
+//            private final String visitorCustomer;
+//            private final String gender;
+//            private final String nameAndFamilyName;
+//            private final String fieldOfExpertise;
+//            private final String organizationLevel;
+//            private final String cellPhone;
+//            private final String directPhone;
+//            private final String fax;
+//            private final String email;
+//            private final String agreedServices;
+//            private final String needToNextVisit;
+//            private final String relationalName;
+//            private final String relationalPhone;
+//            private final String description;
+//            private final String companyName;
+//            private final String companyResearch;
+//            private final String postAddres;
 //
-//            if (data.get(position).isLiked())
-//                viewHolder.imgLike.setColorFilter(ContextCompat.getColor(context, R.color.likeColor));
-//            else
-//                viewHolder.imgLike.setColorFilter(ContextCompat.getColor(context, R.color.unlikeColor));
+//            ViewHolder viewHolder;
+//
+//            public likeRequest(String visitorFromBudget, String visitorCustomer, String companyName, String companyResearch, String gender, String nameAndFamilyName, String fieldOfExpertise, String organizationLevel, String cellPhone, String directPhone, String fax, String email, String postAddres, String agreedServices, String needToNextVisit, String relationalName, String relationalPhone, String description, ViewHolder viewHolder)
+//            {
+//                this.visitorFromBudget = visitorFromBudget;
+//                this.visitorCustomer = visitorCustomer;
+//                this.companyName = companyName;
+//                this.companyResearch = companyResearch;
+//                this.gender = gender;
+//                this.nameAndFamilyName = nameAndFamilyName;
+//                this.fieldOfExpertise = fieldOfExpertise;
+//                this.organizationLevel = organizationLevel;
+//                this.cellPhone = cellPhone;
+//                this.directPhone = directPhone;
+//                this.fax = fax;
+//                this.email = email;
+//                this.postAddres = postAddres;
+//                this.agreedServices = agreedServices;
+//                this.needToNextVisit = needToNextVisit;
+//                this.relationalName = relationalName;
+//                this.relationalPhone = relationalPhone;
+//                this.description = description;
+//                this.viewHolder = viewHolder;
+//            }
+//
+//            @Override
+//            protected void onPreExecute()
+//            {
+//                super.onPreExecute();
+//            }
+//
+//            @Override
+//            protected String doInBackground(Void... voids)
+//            {
+//                String Address = "https://aminib.site/adcapi/register.php";
+//                HashMap hashMap = new HashMap();
+//
+//                hashMap.put("visitorFromBudget", visitorFromBudget);
+//                hashMap.put("visitorCustomer", visitorCustomer);
+//                hashMap.put("companyName", companyName);
+//                hashMap.put("companyResearch", companyResearch);
+//                hashMap.put("gender", gender);
+//                hashMap.put("nameAndFamilyName", nameAndFamilyName);
+//                hashMap.put("fieldOfExpertise", fieldOfExpertise);
+//                hashMap.put("organizationLevel", organizationLevel);
+//                hashMap.put("cellPhone", cellPhone);
+//                hashMap.put("directPhone", directPhone);
+//                hashMap.put("fax", fax);
+//                hashMap.put("email", email);
+//                hashMap.put("postAddres", postAddres);
+//                hashMap.put("agreedServices", agreedServices);
+//                hashMap.put("needToNextVisit", needToNextVisit);
+//                hashMap.put("relationalName", relationalName);
+//                hashMap.put("relationalPhone", relationalPhone);
+//                hashMap.put("description", description);
+////                hashMap.put("viewHolder", viewHolder);
+//
+//                return Utils.sendData(Address, hashMap);
+//            }
+//
+//            @Override
+//            protected void onPostExecute(String s)
+//            {
+//                Toast.makeText(context,s,Toast.LENGTH_LONG).show();
+//            }
 //        }
+//
+//        return vi;
+//    }
 
+//    public void sendImageRequest()
+//    {
+//        String url = "https://aminib.site/adcapi/personal_card.php";
+//
+//        Response.Listener<String> listener = new Response.Listener<String>()
+//        {
+//            @Override
+//            public void onResponse(String response)
+//            {
+//                downloadImage(response);
+//            }
+//        };
+//
+//        Response.ErrorListener errorListener = new Response.ErrorListener()
+//        {
+//            @Override
+//            public void onErrorResponse(VolleyError error)
+//            {
+//                Toast.makeText(context,
+//                        error.getMessage() , Toast.LENGTH_SHORT ).show();
+//            }
+//        };
+//
+//        StringRequest request = new StringRequest(Request.Method.GET, url, listener, errorListener)
+//        {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError
+//            {
+//                Map<String, String> params = new Hashtable<String, String>();
+//                String image = "image";
+//                params.get(image);
+//                params.get("name");
+//                return params;
+//            }
+//        };
+//        request.setRetryPolicy(new DefaultRetryPolicy(1000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+//    }
+//
+//    private void downloadImage(String url)
+//    {
+//        Response.Listener<Bitmap> listener = new Response.Listener<Bitmap>()
+//        {
+//            @Override
+//            public void onResponse(Bitmap response)
+//            {
+//                imageVisitor.setImageBitmap(response);
+//            }
+//        };
+//
+//        Response.ErrorListener errorListener = new Response.ErrorListener()
+//        {
+//            @Override
+//            public void onErrorResponse(VolleyError error)
+//            {
+//                Toast.makeText(context, error.getMessage(), Toast.LENGTH_LONG).show();
+//            }
+//        };
+//
+//        ImageRequest request = new ImageRequest(url, listener, 0, 0, null, null, errorListener);
+//    }
 

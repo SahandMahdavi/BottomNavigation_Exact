@@ -22,7 +22,7 @@
     <string name="email">ایمیل</string>
     <string name="postal_address">آدرس پستی</string>
     <string name="agreed_services">سرویس های توافق شده</string>
-    <string name="need_next_visit">آیا نیاز به مذاکره آتی میباشد؟ بله...خیر</string>
+    <string name="need_next_visit">آیا نیاز به مذاکره آتی میباشد؟</string>
     <string name="relational_name">نام رابط</string>
     <string name="relational_phone">شماره تماس رابط</string>
     <string name="description">توضیحات</string>

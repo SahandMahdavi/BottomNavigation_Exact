@@ -6,6 +6,6 @@
     <color name="textView">#aee8f5</color>
     <color name="textView_visit">#ffffff</color>
     <color name="security">#f71b47</color>
-    <color name="profile">#04102d</color>
+    <color name="profile">#1c6097</color><!--04102d-->
     <color name="black">#000</color>
 </resources>

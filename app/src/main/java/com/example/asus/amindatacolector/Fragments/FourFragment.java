@@ -16,7 +16,7 @@ import com.example.asus.amindatacolector.R;
 
 public class FourFragment extends Fragment
 {
-    TextView txt_website;
+
     public FourFragment()
     {
 

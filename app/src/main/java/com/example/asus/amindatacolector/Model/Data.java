@@ -1,8 +1,6 @@
 package com.example.asus.amindatacolector.Model;
 
 
-import android.widget.ImageView;
-
 public class Data
 {
     String visitorFromBudget;

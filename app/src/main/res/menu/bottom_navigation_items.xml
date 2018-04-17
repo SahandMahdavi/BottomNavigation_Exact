@@ -11,13 +11,6 @@
     </item>
 
     <item
-        android:id="@+id/navigation_two"
-        android:title="جستجو"
-        android:icon="@drawable/ic_search2"
-        app:showAsAction="ifRoom">
-    </item>
-
-    <item
         android:id="@+id/navigation_three"
         android:title="اطلاعات"
         android:icon="@drawable/ic_list2"

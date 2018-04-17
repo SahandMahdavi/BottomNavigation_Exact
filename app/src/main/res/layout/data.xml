@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lnrRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/profile"
+    android:background="#275429"
     android:clipToPadding="false"
     android:layoutDirection="rtl"
     android:orientation="vertical"
@@ -18,263 +16,313 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#388E3C"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/visitorFromBudget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/visitorCustomer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/companyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/companyResearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/nameAndFamilyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/fieldOfExpertise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/organizationLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/cellPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/directPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/fax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/postAddres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/agreedServices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/needToNextVisit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/relationalName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/relationalPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="10dp"
-            android:padding="10dp"
-            android:text="@string/textview"
-            android:textColor="#FFF"
-            android:textSize="14sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layoutDirection="ltr">
 
         <ImageView
-            android:id="@+id/image"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:layout_gravity=""
-            android:layout_marginStart="10dp"
-            android:background="@drawable/unknown"
-            android:padding="10dp"
-            android:scaleType="center"
+            android:id="@+id/imageVisitor"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
             android:contentDescription="@string/todo"/>
+
+        <LinearLayout
+            android:layout_width="460dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="170sp"
+            android:layout_marginStart="-130sp"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/visitor_amin_budget"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/visitor_customer"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/company_name"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/company_research"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/gender"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/fullname"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/experties"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/organ_level"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/phone"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/direct"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/fax"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/email"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/postal_address"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/agreed_services"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/need_next_visit"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/relational_name"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/relational_phone"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/description"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+            <!--================================================SecondInner-->
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="-200dp"
+                android:background="#000"
+                android:layout_marginTop="-472dp"
+                android:layout_marginBottom="400dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/visitorFromBudget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/visitorCustomer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/companyResearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/nameAndFamilyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/fieldOfExpertise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/organizationLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/cellPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/directPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/fax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/postAddres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/agreedServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/needToNextVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/relationalName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/relationalPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:text="@string/textview"
+                    android:textColor="#fff"/>
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+</ScrollView>

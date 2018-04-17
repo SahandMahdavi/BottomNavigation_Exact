@@ -1,147 +1,146 @@
 package com.example.asus.amindatacolector.Fragments;
 
 
-import android.content.ActivityNotFoundException;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.Scroller;
+import android.view.WindowManager;
+import android.widget.BaseAdapter;
+import android.widget.ExpandableListView;
+import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.asus.amindatacolector.Main2Activity;
+import com.example.asus.amindatacolector.Adapter.CustomAdapter;
+import com.example.asus.amindatacolector.Model.Data;
 import com.example.asus.amindatacolector.R;
 import com.example.asus.amindatacolector.Utils.Utils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.HashMap;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class OneFragment extends Fragment
 {
     View view;
-    EditText edt_organ_in1, edt_organ_in2;
-    Button login_login_btn;
+
+    ListView lstPosts;
+    ArrayList<Data> datas = new ArrayList<>();
+    CustomAdapter customAdapter;
+    String Username;
+    String UserCompany;
+    Context context;
 
     public OneFragment()
     {
 
     }
-
+    
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_one_profile, container, false);
 
-        initDeclare();
-        onClick();
+
+        try
+        {
+//            Intent intent = getActivity().getIntent();
+//            Username = intent.getStringExtra("companyName");
+//            UserCompany = intent.getStringExtra("companyResearch");
+//            Toast.makeText(getActivity().getApplicationContext(), Username, Toast.LENGTH_LONG).show();
+
+            lstPosts = (ListView) view.findViewById(R.id.lstPosts);
+            customAdapter = new CustomAdapter(context, datas, Username);
+            lstPosts.setAdapter(customAdapter);
+
+            new getAllMessage(context).execute();
+        }
+        catch (Exception e)
+        {
+            e.getLocalizedMessage();
+        }
 
         return view;
     }
-
-    private class loginRequest extends AsyncTask<Void,Void,String>
+    private class getAllMessage extends AsyncTask<Void,Void,String>
     {
-        private final String companyName;
-        private final String companyResearch;
-
         Context context;
+        ProgressDialog progressDialog;
 
-        public loginRequest(String companyName, String companyResearch, Context context)
+        public getAllMessage(Context context)
         {
-            this.companyName = companyName;
-            this.companyResearch = companyResearch;
-
             this.context = context;
         }
 
         @Override
         protected void onPreExecute()
         {
-            super.onPreExecute();
+
         }
 
         @Override
         protected String doInBackground(Void... voids)
         {
-            String Address = "https://aminib.site/adcapi/login.php";
-            HashMap hashMap = new HashMap();
-
-            hashMap.put("companyName",companyName);
-            hashMap.put("companyResearch",companyResearch);
-
-            return Utils.sendData(Address,hashMap);
+            String Address = "https://aminib.site/adcapi/all_message.php";
+            return Utils.getData(Address);
         }
 
         @Override
-        protected void onPostExecute(String s)
+        protected void onPostExecute(String jsonData)
         {
-            Toast.makeText(context,s,Toast.LENGTH_LONG).show();
-            if (s.equals("مشاهده اطلاعات"))
-            {
-                Intent i = new Intent(getActivity(), Main2Activity.class);
-                i.putExtra("companyName", companyName);
-                i.putExtra("companyResearch",companyResearch);
-                startActivity(i);
-//                startActivity(new Intent(getActivity(), Main2Activity.class));
-            }
-        }
-    }
-
-    public void initDeclare()
-    {
-        edt_organ_in1 = (EditText)view.findViewById(R.id.edt_organ_in1);
-        edt_organ_in2 = (EditText)view.findViewById(R.id.edt_organ_in2);
-
-        login_login_btn  = (Button)view.findViewById(R.id.login_login_btn);
-    }
-
-
-    public void onClick()
-    {
-        login_login_btn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
+            progressDialog.dismiss();
+            if (jsonData != null)
             {
                 try
                 {
-                    //startActivity(new Intent(getActivity(), Main2Activity.class));
-                    String organ_in1 = edt_organ_in1.getText().toString();
-                    String organ_in2 = edt_organ_in2.getText().toString();
+                    JSONArray jsonArray = new JSONArray(jsonData);
+                    for (int i=0 ; i<jsonArray.length() ; i++)
+                    {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
 
-                    if (organ_in1.equals("") || organ_in2.equals(""))
-                    {
-                        Toast.makeText(getActivity().getApplicationContext(),
-                                "برای ورود فیلد های بالا را تکمیل کنید..", Toast.LENGTH_SHORT).show();
+                        String visitorFromBudget = jsonObject.getString("visitorFromBudget");
+                        String visitorCustomer = jsonObject.getString("visitorCustomer");
+                        String companyName = jsonObject.getString("companyName");
+                        String companyResearch = jsonObject.getString("companyResearch");
+                        String gender = jsonObject.getString("gender");
+                        String nameAndFamilyName = jsonObject.getString("nameAndFamilyName");
+                        String fieldOfExpertise = jsonObject.getString("fieldOfExpertise");
+                        String organizationLevel = jsonObject.getString("organizationLevel");
+                        String cellPhone = jsonObject.getString("cellPhone");
+                        String directPhone = jsonObject.getString("directPhone");
+                        String fax = jsonObject.getString("fax");
+                        String email = jsonObject.getString("email");
+                        String postAddres = jsonObject.getString("postAddres");
+                        String agreedServices = jsonObject.getString("agreedServices");
+                        String needToNextVisit = jsonObject.getString("needToNextVisit");
+                        String relationalName = jsonObject.getString("relationalName");
+                        String relationalPhone = jsonObject.getString("relationalPhone");
+                        String description = jsonObject.getString("description");
+
+                        datas.add(new Data(visitorFromBudget,visitorCustomer, companyName, companyResearch,gender, nameAndFamilyName,
+                                fieldOfExpertise, organizationLevel, cellPhone, directPhone, fax,
+                                email, postAddres, agreedServices, needToNextVisit, relationalName, relationalPhone,
+                                description));
+//                        ((BaseAdapter)lstPosts.getAdapter()).notifyDataSetChanged();
                     }
-                    else
-                    {
-                        new loginRequest(organ_in1, organ_in2, getActivity().getApplicationContext()).execute();
-//                        startActivity(new Intent(getActivity(), Main2Activity.class));
-                    }
+                    ((BaseAdapter)lstPosts.getAdapter()).notifyDataSetChanged();
                 }
-
-                catch (NullPointerException e)
+                catch (JSONException e)
                 {
                     e.fillInStackTrace();
                 }
             }
-        });
+            else
+                Toast.makeText(context, "اطلاعاتی موجود نیست", Toast.LENGTH_LONG).show();
+        }
     }
 }

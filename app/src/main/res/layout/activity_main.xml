@@ -26,9 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@color/profile"
-        app:itemIconTint="#4db9ea"
+        android:pointerIcon="arrow"
+        app:itemIconTint="#04102d"
         app:menu="@menu/bottom_navigation_items"
-        app:itemTextColor="#f4810a">
+        app:itemTextColor="#fff">
     </wiadevelopers.com.bottomnavigationlib.BottomNav.BottomNavigationView>
 
 </RelativeLayout>

@@ -18,11 +18,6 @@
         android:layoutDirection="rtl"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
             <TextView
                 android:id="@+id/text_interact"
                 android:layout_width="wrap_content"
@@ -49,20 +44,29 @@
                     android:textSize="15sp"
                     android:typeface="sans"/>
 
-                <EditText
-                    android:id="@+id/check_interact1"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/btn_select"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:hint="بله...خیر"
-                    android:inputType="text"
-                    android:shadowColor="#fff"
+                <!--<EditText-->
+                <!--android:id="@+id/check_interact1"-->
+                <!--android:layout_width="300dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/btn_select"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:hint="بله...خیر"-->
+                <!--android:inputType="text"-->
+                <!--android:shadowColor="#fff"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textColorHint="#fff"-->
+                <!--android:textSize="16sp"-->
+                <!--/>-->
+                <RadioButton
+                    android:id="@+id/aminVisitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:contextClickable="true"
+                    android:text="بله"
                     android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="14sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,22 +77,33 @@
                     android:textSize="15sp"
                     android:typeface="sans"/>
 
-                <EditText
-                    android:id="@+id/check_interact2"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/btn_select"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:hint="بله...خیر"
-                    android:inputType="text"
-                    android:shadowColor="#fff"
+                <!--<EditText-->
+                <!--android:id="@+id/check_interact2"-->
+                <!--android:layout_width="300dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@drawable/btn_select"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:hint="بله...خیر"-->
+                <!--android:inputType="text"-->
+                <!--android:shadowColor="#fff"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textColorHint="#fff"-->
+                <!--android:textSize="16sp"-->
+                <!--/>-->
+
+                <RadioButton
+                    android:id="@+id/customerVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:contextClickable="true"
+                    android:text="بله"
                     android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="14sp"/>
+
             </LinearLayout>
-        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,20 +180,69 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/edt_personal_profile1"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/btn_select"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:hint="@string/gender"
-                    android:inputType="text"
-                    android:shadowColor="#fff"
-                    android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="جنسیت:"
+                        android:textColor="@color/textView_visit"
+                        android:textSize="20sp"
+                        android:typeface="sans"/>
+
+                    <RadioGroup
+                        android:id="@+id/check_interact2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="-20dp"
+                        android:layout_marginTop="20dp">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:contextClickable="true"
+                            android:padding="5sp"
+                            android:text="مرد"
+                            android:textColor="#fff"
+                            android:textSize="14sp"/>
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:contextClickable="true"
+                            android:padding="5sp"
+                            android:text="زن"
+                            android:textColor="#fff"
+                            android:textSize="14sp"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <!--<EditText-->
+                <!--android:id="@+id/edt_personal_profile1"-->
+                <!--android:layout_width="300dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:background="@drawable/btn_select"-->
+                <!--android:gravity="center_horizontal|center_vertical"-->
+                <!--android:hint="@string/gender"-->
+                <!--android:inputType="text"-->
+                <!--android:shadowColor="#fff"-->
+                <!--android:textColor="#fff"-->
+                <!--android:textColorHint="#fff"-->
+                <!--android:textSize="16sp"/>-->
 
                 <EditText
                     android:id="@+id/edt_personal_profile3"
@@ -363,28 +427,53 @@
                     android:textColorHint="#fff"
                     android:textSize="16sp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
-                    android:text="@string/need_next_visit"
-                    android:textColor="@color/textView_visit"
-                    android:textSize="18sp"
-                    android:typeface="sans"/>
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/check_result2"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/btn_select"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:hint="بله...خیر؟"
-                    android:inputType="text"
-                    android:shadowColor="#fff"
-                    android:textColor="#fff"
-                    android:textColorHint="#fff"
-                    android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="@string/need_next_visit"
+                        android:textColor="@color/textView_visit"
+                        android:textSize="18sp"
+                        android:typeface="sans"/>
+
+                    <RadioGroup
+                        android:id="@+id/check_interact3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="-20dp"
+                        android:layout_marginTop="20dp">
+
+                        <RadioButton
+                            android:id="@+id/nextYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:contextClickable="true"
+                            android:padding="5sp"
+                            android:text="بله"
+                            android:textColor="#fff"
+                            android:textSize="14sp"/>
+
+                        <RadioButton
+                            android:id="@+id/nextNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:contextClickable="true"
+                            android:padding="5sp"
+                            android:text="خیر"
+                            android:textColor="#fff"
+                            android:textSize="14sp"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/edt_result3"
@@ -454,17 +543,33 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:id="@+id/ImageViewHolder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="26dp"
                     android:contentDescription="@string/todo"
-                    app:srcCompat="@drawable/unknown"/>
+                    android:src="@drawable/profile" />
+
+               <EditText
+                android:id="@+id/editText_imagename"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_select"
+                android:gravity="center_horizontal|center_vertical"
+                android:hint="لطفا نام عکس را وارد کنید"
+                android:inputType="text"
+                android:shadowColor="#fff"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textSize="16sp"/>
 
                 <Button
-                    android:id="@+id/btn_picture"
+                    android:id="@+id/btn_capture_picture"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
